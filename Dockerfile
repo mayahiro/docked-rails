@@ -1,12 +1,12 @@
-ARG RUBY_VERSION=3.3.0
+ARG RUBY_VERSION=3.4.1
 
 FROM ruby:$RUBY_VERSION-slim
 
 # Install dependencies
 RUN apt-get update -qq && apt-get install -y build-essential libvips gnupg2 curl git
 
-# Ensure node.js 20 is available for apt-get
-ARG NODE_MAJOR=20
+# Ensure node.js 22 is available for apt-get
+ARG NODE_MAJOR=22
 RUN apt-get update && \
     mkdir -p /etc/apt/keyrings && \
     curl --fail --silent --show-error --location https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
