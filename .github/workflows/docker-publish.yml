@@ -3,8 +3,6 @@ name: Docker
 on:
   push:
     branches: main
-  schedule:
-    - cron:  '0 0 * * *' # once per day
 
 jobs:
   build-and-push-image:
@@ -36,4 +34,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/rails/cli:latest
+          tags: ghcr.io/mayahiro/rails-cli:latest
