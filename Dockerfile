@@ -3,7 +3,7 @@ ARG RUBY_VERSION=3.4.4
 FROM ruby:$RUBY_VERSION-slim
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y build-essential libvips gnupg2 curl git libyaml-dev libmysqlclient-dev
+RUN apt-get update -qq && apt-get install -y build-essential libvips gnupg2 curl git libyaml-dev default-libmysqlclient-dev
 
 # Ensure node.js 22 is available for apt-get
 ARG NODE_MAJOR=22
